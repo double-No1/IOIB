@@ -5,6 +5,7 @@ import torch.nn.functional as F
 
 
 class OCC_loss(nn.Module):
+    
     def __init__(self, ord=2,):
         super().__init__()
         self.ord = ord
