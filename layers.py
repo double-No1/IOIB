@@ -5,7 +5,7 @@ from torch_scatter import scatter_mean
 
 import random
 class CNN(nn.Module):
-    """图像/子图的特征编码器（可根据需求替换为ResNet等）"""
+
     def __init__(self, input_dim=3, hidden_dim=128, output_dim=64):
         super().__init__()
         self.conv = nn.Sequential(
@@ -14,7 +14,7 @@ class CNN(nn.Module):
             nn.Conv2d(hidden_dim, hidden_dim*2, kernel_size=3, stride=2, padding=1),
             nn.ReLU(),
             nn.Conv2d(hidden_dim*2, output_dim, kernel_size=3, stride=2, padding=1),
-            nn.AdaptiveAvgPool2d(1)  # 全局池化，输出(B, output_dim, 1, 1)
+            nn.AdaptiveAvgPool2d(1)  
         )
 
     def forward(self, x):
