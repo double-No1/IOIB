@@ -5,7 +5,6 @@ from torch_scatter import scatter_mean
 
 import random
 class CNN(nn.Module):
-
     def __init__(self, input_dim=3, hidden_dim=128, output_dim=64):
         super().__init__()
         self.conv = nn.Sequential(
